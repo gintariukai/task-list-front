@@ -1,30 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-import GlobalFeed from "pages/globalFeed";
-import Article from "pages/article";
+import Routes from "pages/routes";
 import TopBar from "components/topBar";
 
-
-const App = () => {
+const App = ()  => {
     return (
         <div>
-            <h3>Welcome</h3>
             <Router>
-                <TopBar/>
-                <Routes>
-                    <Route path="/" element={<GlobalFeed />} exact />
-                    <Route path="/article/:slug" element={<Article />} />
-                </Routes>
+                <TopBar />
+                <Routes />
             </Router>
         </div>
-    );
-};
+    )
+}
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
     <React.StrictMode>
-        <App />
-    </React.StrictMode>,
-    document.getElementById('root')
+        <App/>
+    </React.StrictMode>
 );
