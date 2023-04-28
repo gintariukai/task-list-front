@@ -1,13 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import {BrowserRouter as Router} from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import {BrowserRouter as Router} from "react-router-dom";
 
-import {CurrentUserProvider} from "contexts/currentUser";
-import Routes from "pages/routes";
+import Routes from "routes";
 import TopBar from "components/topBar";
 import CurrentUserChecker from "components/currentUserChecker";
+import {CurrentUserProvider} from "contexts/currentUser";
 
 const App = () => {
+
     return (
         <CurrentUserProvider>
             <CurrentUserChecker>
